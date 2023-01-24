@@ -85,3 +85,52 @@ def posicao_valida(frota, linha, coluna, orientacao, tamanho):
 
 
 
+
+cont1=True
+cont2 = True
+input("Insira as informações referentes ao navio porta-aviões que possui tamanho 4")
+
+while cont1:
+    porta_aviões_linha = int (input('Linha:'))
+    porta_aviões_coluna = int (input('Coluna:'))
+    porta_aviões_orientação = int (input ('Orientação'))
+    if porta_aviões_orientação == 1 :
+        porta_aviões_orientação='vertical'
+    if porta_aviões_orientação == 2:
+        porta_aviões_orientação = 'horizontal'
+    valida_pa=posicao_valida({},porta_aviões_linha,porta_aviões_coluna,porta_aviões_orientação,4)
+    if valida_pa== True:
+        cont1=False
+    else:
+        valida_pa== False
+        print("Esta posição não está válida!")
+define= (define_posicoes(porta_aviões_linha,porta_aviões_coluna,porta_aviões_orientação,4))
+frota=(preenche_frota({},'porta-aviões',porta_aviões_linha,porta_aviões_coluna,porta_aviões_orientação,4))
+
+i=1
+
+while cont2:
+    input("Insira as informações referentes ao navio navio-tanque que possui tamanho 3")
+    navio_tanque_linha = int (input('Linha:'))
+    navio_tanque_coluna = int (input('Coluna:'))
+    navio_tanque_orientacao = int (input ('Orientação'))
+    if navio_tanque_orientacao == 1 :
+        navio_tanque_orientacao='vertical'
+    if navio_tanque_orientacao == 2:
+        navio_tanque_orientacao = 'horizontal'
+    valida_pa=posicao_valida({},navio_tanque_linha,navio_tanque_coluna,navio_tanque_orientacao,3)
+    if valida_pa== False:
+        print("Esta posição não está válida!")
+    if i>=2:
+        cont2=False
+    i+=1
+
+
+
+
+
+
+
+
+
+ 
