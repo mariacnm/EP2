@@ -1,4 +1,4 @@
-def define_posicoes(linha,coluna,orientacao,tamanho):
+def  define_posicoes(linha,coluna,orientacao,tamanho):
     posicao=[0]*tamanho
     
     if orientacao== 'vertical':
@@ -17,6 +17,7 @@ def define_posicoes(linha,coluna,orientacao,tamanho):
             coluna+=1
             posicao[i]=pos
         return posicao
+
 def preenche_frota(frota, nome_navio, linha, coluna, orientacao, tamanho):
     define=(define_posicoes(linha,coluna,orientacao,tamanho))
     if nome_navio not in frota:
@@ -83,9 +84,26 @@ def posicao_valida(frota, linha, coluna, orientacao, tamanho):
                         return False
     return True
 
+vdd=True
 
+lista=[[]]
+frota={}
+conta=4
+tamanho=4
+navio="porta-aviões"
+while vdd:
+    print(f"Insira as informações referentes ao navio {navio} que possui tamanho {tamanho}")
+    continuar=True
+    continuar2=True
+    while continuar:
+        linha=int (input('Linha:'))
 
+        if linha >=0 and linha <=9:
+            continuar=False
+        else:
+            print("Esta posição não está válida!")
 
+<<<<<<< HEAD
 cont1=True
 cont2 = True
 cont3=True
@@ -180,3 +198,11 @@ jogando= False
 
 
  
+=======
+    while continuar2:
+        coluna=int (input('Coluna:'))
+        if coluna >=0 and coluna <=9:
+            continuar2=False
+        else:
+            print("Esta posição não está válida!")
+>>>>>>> affbdc233b90036920b84b43edaf004af966372e
