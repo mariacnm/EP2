@@ -90,6 +90,7 @@ cont1=True
 cont2 = True
 cont3=True
 cont4=True
+
 print("Insira as informações referentes ao navio porta-aviões que possui tamanho 4")
 
 while cont1:
@@ -172,7 +173,7 @@ while cont4:
 #define4= (define_posicoes(navio_contratorpedeiro_linha,navio_contratorpedeiro_coluna,navio_contratorpedeiro_orientacao,2))
 frota4=(preenche_frota(frota3,'contratorpedeiro',submarino_linha,submarino_coluna,'horizontal',1))
 print(frota4)
-
+jogando= False
 
 
 
