@@ -1,3 +1,4 @@
+import random
 def  define_posicoes(linha,coluna,orientacao,tamanho):
     posicao=[0]*tamanho
     
@@ -99,6 +100,7 @@ def monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente):
 vdd=True
 jogando=True
 inedita=[]
+inedita_oponente=[]
 frota={}
 conta=4
 tamanho=4
@@ -131,7 +133,7 @@ while jogando:
         continuar=True
         continuar2=True
         while continuar:
-            linha=int (input('Linha:'))
+            linha= int(input('Linha:'))
 
             if linha >=0 and linha <=9:
                 continuar=False
@@ -139,7 +141,7 @@ while jogando:
                 print('Linha inválida!')
 
         while continuar2:
-            coluna=int (input('Coluna:'))
+            coluna=int(input('Coluna:'))
             if coluna >=0 and coluna <=9:
                 continuar2=False
             else:
@@ -218,5 +220,25 @@ while jogando:
     
         if afundado == 10:
             repeticao=False
+            print('Parabéns! Você derrubou todos os navios do seu oponente!')
+            
+        else:
+            linhaO= random.randint(0,9)
+            colunaO=random.randint(0,9)
+
+            while [linhaO,colunaO] in inedita_oponente:
+                linhaO= random.randint(0,9)
+                colunaO=random.randint(0,9)
+               
+            else:
+                inedita_oponente.append([linhaO,colunaO])
+                print(f'Seu oponente está atacando na linha {linhaO} e coluna {colunaO}')
+
+            fazjogada_O= faz_jogada(tabuleiro_jogador,linhaO,colunaO)
+            afundado_O=afundados(frota,tabuleiro_jogador)
+            if afundado_O == 10:
+                print('Xi! O oponente derrubou toda a sua frota =(')
+                repeticao=False
+            
     jogando = False
-print('Parabéns! Você derrubou todos os navios do seu oponente!')
+
