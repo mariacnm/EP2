@@ -124,7 +124,6 @@ frota_oponente = {
         }
 tabuleiro_oponente= posiciona_frota(frota_oponente)
 repeticao=True
-afundado=0
 navio="porta-aviões"
 while jogando:
     while vdd:
@@ -215,7 +214,7 @@ while jogando:
         monta_tabu= monta_tabuleiros(tabuleiro_jogador,tabuleiro_oponente)
         print(monta_tabu)
         fazjogada= faz_jogada(tabuleiro_oponente,linhaj,colunaj)
-        afundado+= afundados(frota,tabuleiro_oponente)
+        afundado=afundados(frota_oponente,tabuleiro_oponente)
     
         if afundado == 10:
             repeticao=False
